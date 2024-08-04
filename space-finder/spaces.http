@@ -1,0 +1,7 @@
+
+
+GET  https://472mxycvq0.execute-api.us-east-1.amazonaws.com/prod/spaces
+###
+
+POST  https://472mxycvq0.execute-api.us-east-1.amazonaws.com/prod/spaces
+###
