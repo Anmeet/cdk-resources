@@ -1,7 +1,27 @@
 
 
-GET  https://472mxycvq0.execute-api.us-east-1.amazonaws.com/prod/spaces
+GET https://08qk9f8bhb.execute-api.us-east-1.amazonaws.com/prod/spaces
 ###
 
-POST  https://472mxycvq0.execute-api.us-east-1.amazonaws.com/prod/spaces
+POST  https://08qk9f8bhb.execute-api.us-east-1.amazonaws.com/prod/spaces
+content-type: application/json
+
+{
+    "location": "France",
+    "name": "BestLocation"
+}
+###
+
+GET https://08qk9f8bhb.execute-api.us-east-1.amazonaws.com/prod/spaces?id=b7be445c-3362-43c6-ab4d-6b64f6ed874e
+###
+
+PUT  https://08qk9f8bhb.execute-api.us-east-1.amazonaws.com/prod/spaces?id=b7be445c-3362-43c6-ab4d-6b64f6ed874e
+content-type: application/json
+
+{
+    "name": "Best Location in the town"
+}
+###
+
+DELETE https://08qk9f8bhb.execute-api.us-east-1.amazonaws.com/prod/spaces?id=246b5025-73de-4936-843b-0324faa998ea
 ###
