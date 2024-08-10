@@ -32,7 +32,7 @@ export class AuthStack extends Stack {
     this.createUserPool()
     this.createUserPoolClient()
     this.createIdentityPool()
-    this.createRoles()
+    this.createRoles(props.photosBucket)
     this.attachRoles()
     this.createAdminsGroup()
   }
@@ -90,7 +90,7 @@ export class AuthStack extends Stack {
     })
   }
 
-  private createRoles() {
+  private createRoles(photosBucket: IBucket) {
     this.authenticatedRole = new Role(this, 'CognitoDefaultAuthenticatedRole', {
       assumedBy: new FederatedPrincipal(
         'cognito-identity.amazonaws.com',
@@ -138,13 +138,13 @@ export class AuthStack extends Stack {
       ),
     })
 
-    // this.adminRole.addToPolicy(
-    //   new PolicyStatement({
-    //     effect: Effect.ALLOW,
-    //     actions: ['s3:PutObject', 's3:PutObjectAcl'],
-    //     resources: [photosBucket.bucketArn + '/*'],
-    //   })
-    // )
+    this.adminRole.addToPolicy(
+      new PolicyStatement({
+        effect: Effect.ALLOW,
+        actions: ['s3:PutObject', 's3:PutObjectAcl'],
+        resources: [photosBucket.bucketArn + '/*'],
+      })
+    )
     this.adminRole.addToPolicy(
       new PolicyStatement({
         effect: Effect.ALLOW,

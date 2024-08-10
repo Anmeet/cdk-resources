@@ -11,6 +11,7 @@ handler(
     // },
     body: JSON.stringify({
       location: 'Dublin',
+      name: 'asdf',
     }),
   } as any,
   {} as any
