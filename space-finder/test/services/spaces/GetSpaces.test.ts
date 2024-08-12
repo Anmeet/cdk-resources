@@ -60,7 +60,7 @@ describe('GetSpaces test suite', () => {
     )
     const expectedResult = {
       statusCode: 400,
-      body: JSON.stringify('Id required!'),
+      body: JSON.stringify('Id required!!'),
     }
     expect(getResult).toEqual(expectedResult)
   })
@@ -77,7 +77,7 @@ describe('GetSpaces test suite', () => {
     )
     const expectedResult = {
       statusCode: 404,
-      body: JSON.stringify(`Space with id 123 not found!`),
+      body: JSON.stringify(`Space with id 123 does not exist`),
     }
     expect(getResult).toEqual(expectedResult)
   })

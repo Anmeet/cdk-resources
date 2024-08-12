@@ -12,7 +12,8 @@ import { JsonError, MissingFieldError } from '../shared/Validator'
 import { addCorsHeader } from '../shared/Utils'
 import { captureAWSv3Client, getSegment } from 'aws-xray-sdk-core'
 
-const ddbClient = captureAWSv3Client(new DynamoDBClient({}))
+//const ddbClient = captureAWSv3Client(new DynamoDBClient({}))
+const ddbClient = new DynamoDBClient({})
 async function handler(
   event: APIGatewayProxyEvent,
   context: Context
@@ -20,13 +21,13 @@ async function handler(
   let response: APIGatewayProxyResult
 
   //xray subSegment for long api call
-  const subSeg = getSegment().addNewSubsegment('MyLongCall')
-  await new Promise((resolve) => setTimeout(resolve, 3000))
-  subSeg.close()
+  // const subSeg = getSegment().addNewSubsegment('MyLongCall')
+  // await new Promise((resolve) => setTimeout(resolve, 3000))
+  // subSeg.close()
 
-  const subSeg2 = getSegment().addNewSubsegment('MyLongCall')
-  await new Promise((resolve) => setTimeout(resolve, 5000))
-  subSeg2.close()
+  // const subSeg2 = getSegment().addNewSubsegment('MyLongCall')
+  // await new Promise((resolve) => setTimeout(resolve, 5000))
+  // subSeg2.close()
 
   try {
     switch (event.httpMethod) {

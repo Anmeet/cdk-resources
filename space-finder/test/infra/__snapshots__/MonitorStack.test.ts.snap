@@ -11,7 +11,7 @@ exports[`Monitor stack test suite Lambda stack snapshot 1`] = `
         "S3Bucket": {
           "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
         },
-        "S3Key": "064be421ff5ccde25ef68eac958845799b047c4f86b704a936ff6a8096adff2c.zip",
+        "S3Key": "40d6f4b7cc487baf2998e601f5d53b52d7fcbabb3e51871528b7e520e22ccbf6.zip",
       },
       "Handler": "index.handler",
       "Role": {
@@ -83,7 +83,7 @@ exports[`Monitor stack test suite Monitor stack snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "064be421ff5ccde25ef68eac958845799b047c4f86b704a936ff6a8096adff2c.zip",
+          "S3Key": "40d6f4b7cc487baf2998e601f5d53b52d7fcbabb3e51871528b7e520e22ccbf6.zip",
         },
         "Handler": "index.handler",
         "Role": {

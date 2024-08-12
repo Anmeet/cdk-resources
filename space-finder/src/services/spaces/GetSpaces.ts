@@ -31,7 +31,7 @@ export async function getSpaces(
         }
       } else {
         return {
-          statusCode: 400,
+          statusCode: 404,
           body: JSON.stringify(`Space with id ${spaceId} does not exist`),
         }
       }
