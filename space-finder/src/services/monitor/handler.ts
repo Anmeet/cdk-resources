@@ -7,9 +7,6 @@ async function handler(event: SNSEvent, context) {
   for (const record of event.Records) {
     await fetch(webHookUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
       body: JSON.stringify({
         text: `Message: ${record.Sns.Message}`,
       }),
